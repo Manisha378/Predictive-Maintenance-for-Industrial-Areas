@@ -9,7 +9,7 @@ app = Flask(__name__)
 model = joblib.load("models/final_model.pkl")
 
 @app.route("/")
-def login():
+def home():
     return render_template("login.html")
 
 @app.route("/upload")
@@ -22,23 +22,23 @@ def about():
 
 @app.route("/result", methods=["POST"])
 def result():
-    data = [
+    sensor_data = [
         float(request.form["sensor_1"]),
         float(request.form["sensor_2"]),
         float(request.form["sensor_3"]),
         float(request.form["sensor_4"])
     ]
-    prediction = model.predict([data])[0]
-    probability = model.predict_proba([data])[0][prediction] * 100
+    prediction = model.predict([sensor_data])[0]
+    probability = model.predict_proba([sensor_data])[0][prediction] * 100
 
-    plt.figure()
-    sns.barplot(x=["Sensor 1", "Sensor 2", "Sensor 3", "Sensor 4"], y=data)
-    plt.title("Sensor Data Visualization")
-    path = os.path.join("static", "graph.png")
-    plt.savefig(path)
+    plt.figure(figsize=(6, 4))
+    sns.barplot(x=["Vibration", "Temp", "Pressure", "Voltage"], y=sensor_data)
+    plt.title("Sensor Readings")
+    graph_path = os.path.join("static", "graph.png")
+    plt.savefig(graph_path)
     plt.close()
 
-    return render_template("result.html", prediction=prediction, probability=round(probability, 2), graph_image=path)
+    return render_template("result.html", prediction=prediction, probability=round(probability, 2), graph_image=graph_path)
 
 if __name__ == "__main__":
     app.run(debug=True)

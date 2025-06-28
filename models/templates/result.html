@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Prediction Result</title>
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <h2>Prediction Result:</h2>
-  <p>
-    {% if prediction == 1 %}
-      🚨 Machine likely to FAIL with {{ probability }}% confidence.
-    {% else %}
-      ✅ Machine is HEALTHY with {{ probability }}% confidence.
-    {% endif %}
-  </p>
-  <img src="{{ graph_image }}" alt="Sensor Graph" width="500">
+  <div class="container">
+    <h2>Prediction Result</h2>
+    <p>
+      {% if prediction == 1 %}
+        🔴 Failure Likely ({{ probability }}% confidence)
+      {% else %}
+        🟢 Machine is Healthy ({{ probability }}% confidence)
+      {% endif %}
+    </p>
+    <img src="{{ graph_image }}" alt="Sensor Graph" width="500">
+  </div>
 </body>
 </html>
+
