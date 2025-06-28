@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login Page</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      width: 400px;
+      background: linear-gradient(135deg, #ffa94d, #ffc078);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-title {
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #000;
+      display: inline-block;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+
+    .form-group label {
+      font-size: 18px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .form-group i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  pointer-events: auto;
+  }
+
+  .form-group .fas {
+    transform: translateY(50%);
+    
+  }
+
+    
+
+    .forgot-password {
+      font-size: 14px;
+      color: #333;
+      text-align: right;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #ffa94d;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #ff922b;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: -20px;
+      margin-bottom: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-title">Login</div>
+
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" id="username" placeholder="Enter your username">
+      <i class="fas fa-user"></i>
+      <div class="error" id="usernameError">Username is required</div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter your password">
+      <i class="fas fa-eye" id="togglePassword"></i>
+      <div class="error" id="passwordError">Password is required</div>
+    </div>
+
+    <div class="forgot-password">Forgot password</div>
+
+    <button class="login-btn" onclick="validateForm()">Login</button>
+  </div>
+
+  <script>
+    // Password show/hide toggle
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordField = document.getElementById("password");
+
+    togglePassword.addEventListener("click", () => {
+      const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
+      passwordField.setAttribute("type", type);
+      togglePassword.classList.toggle("fa-eye");
+      togglePassword.classList.toggle("fa-eye-slash");
+    });
+
+    // Form validation
+    function validateForm() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const usernameError = document.getElementById("usernameError");
+      const passwordError = document.getElementById("passwordError");
+
+      let valid = true;
+
+      if (!username) {
+        usernameError.style.display = "block";
+        valid = false;
+      } else {
+        usernameError.style.display = "none";
+      }
+
+      if (!password) {
+        passwordError.style.display = "block";
+        valid = false;
+      } else {
+        passwordError.style.display = "none";
+      }
+
+      if (valid) {
+        alert("Login successful (placeholder)!");
+      }
+    }
+  </script>
+
+</body>
+</html>

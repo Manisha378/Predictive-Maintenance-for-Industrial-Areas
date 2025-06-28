@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Sensor Data</title>
+</head>
+<body>
+  <h2>Enter Sensor Values</h2>
+  <form action="/result" method="POST">
+    <label>Sensor 1:</label>
+    <input type="number" name="sensor_1" step="any" required><br>
+    <label>Sensor 2:</label>
+    <input type="number" name="sensor_2" step="any" required><br>
+    <label>Sensor 3:</label>
+    <input type="number" name="sensor_3" step="any" required><br>
+    <label>Sensor 4:</label>
+    <input type="number" name="sensor_4" step="any" required><br>
+    <button type="submit">Predict</button>
+  </form>
+</body>
+</html>

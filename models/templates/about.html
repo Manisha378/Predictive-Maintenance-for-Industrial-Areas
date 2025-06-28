@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Predictive Maintenance Platform</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fdfdfd;
+    }
+
+    nav {
+      display: flex;
+      background-color: #f3f3f3;
+      padding: 15px 30px;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    nav .left,
+    nav .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav .logo {
+      width: 40px;
+      height: 40px;
+      background-color: gray;
+      border-radius: 50%;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #007bff;
+    }
+
+    .hero {
+      background-color: #111827;
+      color: white;
+      padding: 40px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      max-width: 45%;
+    }
+
+    .hero-left .main-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .hero-left .subtitle {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .hero-left img.image-small {
+      width: 140px;
+      display: block;
+    }
+
+    .hero img.image-large {
+      width: 250px;
+      object-fit: contain;
+      align-self: flex-start;
+    }
+
+    .section {
+      background: #f8d5c0;
+      padding: 40px 30px;
+    }
+
+    .mission-vision {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .mission-vision div {
+      width: 48%;
+    }
+
+    .mission-vision h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    .mission-vision p {
+      font-size: 15px;
+      color: #222;
+    }
+
+    .how-it-works {
+      margin-top: 10px;
+    }
+
+    .how-it-works h2 {
+      font-size: 20px;
+      margin-bottom: 30px;
+      color: #000;
+    }
+
+    .how-it-works > p {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .step {
+      text-align: center;
+      width: 30%;
+    }
+
+    .step img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="left">
+      <div class="logo"></div>
+      <a>Logo</a>
+    </div>
+    <div class="right">
+      <a onclick="alert('Upload clicked')">Upload</a>
+      <a onclick="alert('Result clicked')">Result</a>
+      <a onclick="alert('About clicked')">About</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-left">
+      <h1 class="main-title">About Our Predictive Maintenance Platform</h1>
+      <p class="subtitle">Harnessing AI and IoT to predict machine failures before they happen</p>
+      <img src="predictive1.jpg" alt="Predictive Maintenance Image" class="image-small" />
+    </div>
+    <img src="predictive4.jpg" alt="Technician Illustration" class="image-large" />
+  </div>
+
+  <div class="section">
+    <div class="mission-vision">
+      <div>
+        <h2>Our Mission</h2>
+        <p>To minimize downtime and optimize machine health through intelligent analytics.</p>
+      </div>
+      <div>
+        <h2>Our Vision</h2>
+        <p>Creating a future where machines self-report issues before they impact productivity.</p>
+      </div>
+    </div>
+
+    <div class="how-it-works">
+      <h2>How It Works</h2>
+      <p>AI models detect anomalies and predict failures</p>
+      <div class="steps">
+        <div class="step">
+          <img src="data_icon.jpg" alt="Data Collection" />
+          <h3>Step 1: Data Collection</h3>
+          <p>Sensors capture real-time machine performance data.</p>
+        </div>
+        <div class="step">
+          <img src="ai_icon.jpg" alt="AI Analysis" />
+          <h3>Step 2: AI Analysis</h3>
+          <p>Data is analyzed by AI to detect potential issues.</p>
+        </div>
+        <div class="step">
+          <img src="alert_icon.jpg" alt="Maintenance Alert" />
+          <h3>Step 3: Maintenance Alerts</h3>
+          <p>Technicians receive smart alerts before issues occur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
